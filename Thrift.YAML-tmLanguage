@@ -97,7 +97,7 @@ patterns:
       endCaptures:
         '0': {name: punctuation.section.enum.end.thrift}
       patterns:
-      - match: (?<!\S)([a-zA-Z_][\w.]*)(?:\s*=\s*(\d*))?(?:\s*[,;])?
+      - match: (?<!\S)([a-zA-Z_][\w.]*)(?:\s*=\s*((0x[a-fA-F0-9]+)|\d+)?)?(?:\s*[,;])?
         captures:
           '1': {name: variable.other.enum.thrift}
           '2': {name: constant.numeric.integer.thrift}
@@ -290,7 +290,7 @@ repository:
     - name: constant.numeric.float.thrift
       match: '[+-]?\d*\.\d+([eE][+-]?\d+)?'
     - name: constant.numeric.integer.thrift
-      match: '[+-]?\d+'
+      match: '(0x[a-fA-F\d]+)|([+-]?\d+)'
     - name: constant.other.const-data.thrift
       match: '[a-zA-Z_][\w.]*'
     - name: string.quoted.single.thrift
