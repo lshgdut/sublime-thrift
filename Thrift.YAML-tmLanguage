@@ -261,7 +261,7 @@ repository:
     beginCaptures:
       '1': {name: entity.other.field-id.thrift}
       '2': {name: keyword.other.requiredness.thrift}
-    end: '[,;]|(?=[)#]|//)|$'
+    end: '[,;]|(?=[)#}]|//)|$'
     endCaptures:
       '0': {name: punctuation.separator.fields.thrift}
     patterns:
@@ -274,10 +274,10 @@ repository:
         '1': {name: storage.type.field.thrift}
         '2': {name: keyword.other.cpp-type.thrift}
         '3': {name: variable.other.field-name.thrift}
-      end: (?=[,;]|[)#]|//)|$
+      end: (?=[,;]|[)}#]|//)|$
       patterns:
       - begin: '='
-        end: (?=[,;]|[)#]|//)|$
+        end: (?=[,;]|[)}#]|//)|$
         patterns:
         - name: keyword.other.xsd_optional.thrift
           match: (?<!\S)(xsd_optional)\b
